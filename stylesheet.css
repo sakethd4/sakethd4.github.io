@@ -1,6 +1,5 @@
-/* Element selectors establish the page's typography and box model. */
-* { box-sizing: border-box; }
-html { scroll-behavior: smooth; scroll-padding-top: 2rem; }
+﻿* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
 body {
   margin: 0;
   background: #f8f7f3;
@@ -8,70 +7,40 @@ body {
   font-family: "Segoe UI", Arial, sans-serif;
   line-height: 1.7;
 }
-a { color: #285d48; text-decoration-thickness: 1px; text-underline-offset: 5px; }
+a { color: #285d48; text-underline-offset: 5px; }
 a:hover { color: #a34524; }
 a:focus-visible { outline: 3px solid #a34524; outline-offset: 6px; }
 img { display: block; max-width: 100%; height: auto; }
-h1, h2, h3, p, figure { margin: 0; }
-h1, h2, h3 { line-height: 1.2; }
-h1, h2 { font-family: Georgia, "Times New Roman", serif; font-weight: 400; }
-.site-header, main, footer { width: min(1120px, calc(100% - 80px)); margin-inline: auto; }
+h1, h2, p, figure { margin: 0; }
+h1, h2 { line-height: 1.2; font-weight: 500; }
+.site-header, main, footer { width: min(1000px, calc(100% - 80px)); margin-inline: auto; }
 .site-header { display: flex; align-items: center; justify-content: space-between; padding-block: 24px; border-bottom: 1px solid #d9ded7; }
 .wordmark { color: #232d29; font-family: Georgia, serif; font-size: 40px; font-weight: bold; line-height: 1; text-decoration: none; }
 .wordmark span { color: #b85b37; }
 nav { display: flex; gap: 30px; }
 nav a { font-size: 14px; font-weight: 600; text-decoration: none; }
-.hero { display: grid; grid-template-columns: 1.1fr 1fr; align-items: center; gap: 40px; padding-block: 88px 80px; }
-.eyebrow { font-size: 11px; font-weight: 700; letter-spacing: 1.7px; text-transform: uppercase; }
-.status-dot { display: inline-block; width: 7px; height: 7px; margin-right: 7px; border-radius: 50%; background: #43775b; }
-h1 { margin-block: 22px; font-size: clamp(44px, 5.5vw, 72px); letter-spacing: -3px; }
-h1 span { display: block; color: #285d48; }
-.intro { font-size: 23px; line-height: 1.45; letter-spacing: -.4px; }
-.hero-description { max-width: 420px; margin-block: 22px 30px; color: #56645c; font-size: 15px; }
-.button { display: inline-flex; align-items: center; justify-content: space-between; gap: 28px; padding: 12px 20px; border: 1px solid #285d48; border-radius: 4px; background: #285d48; color: #fff; font-size: 14px; font-weight: 600; text-decoration: none; }
-.button:hover { color: #fff; background: #a34524; border-color: #a34524; }
+/* Shared by both content sections. */
+.site-section { padding-block: 48px; border-bottom: 1px solid #d9ded7; }
+.hero { display: grid; grid-template-columns: 1.1fr 1fr; align-items: center; gap: 40px; }
+h1 { margin-bottom: 24px; font-size: clamp(40px, 5vw, 60px); letter-spacing: -2px; }
+h1 span { color: #285d48; }
+.hero-description { max-width: 440px; color: #56645c; font-size: 17px; }
 .hero-art { padding: 10px; }
-.hero-art figcaption { margin-top: 12px; color: #58655e; font-family: Georgia, serif; font-size: 14px; font-style: italic; text-align: center; }
-.content-section { display: grid; grid-template-columns: 230px 1fr; gap: 34px; padding-block: 56px; border-top: 1px solid #d9ded7; }
-.section-label { padding-top: 8px; font-size: 11px; font-weight: 700; letter-spacing: 1.8px; }
-.section-label span { margin-right: 12px; color: #a34524; }
-h2 { margin-bottom: 20px; font-size: clamp(28px, 3vw, 36px); letter-spacing: -.8px; }
-.about-section p { max-width: 730px; margin-top: 16px; color: #56645c; font-size: 16px; }
-.section-intro { color: #56645c; }
-.learning-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-top: 28px; }
-/* This reusable class styles all three learning cards. */
-.learning-card { padding: 24px 20px; border: 1px solid #d9ded7; border-radius: 5px; background: #f0f2eb; }
-.card-symbol { display: block; margin-bottom: 28px; color: #285d48; font-family: Consolas, monospace; font-size: 24px; }
-h3 { margin-bottom: 12px; font-size: 16px; font-weight: 600; }
-.learning-card p { color: #56645c; font-size: 14px; }
-/* An ID selector gives the about section its own readable content layout. */
-#about { align-items: start; }
-.connect-section { padding: 48px 24px; border-top: 1px solid #d9ded7; text-align: center; }
-.connect-section .eyebrow { margin-bottom: 16px; color: #a34524; }
-.connect-section h2 { margin-bottom: 24px; }
-footer { display: flex; justify-content: space-between; gap: 24px; padding-block: 24px; border-top: 1px solid #d9ded7; color: #56645c; font-size: 12px; }
+h2 { margin-bottom: 16px; font-size: 24px; }
+#about { scroll-margin-top: 24px; }
+.about-section p { max-width: 730px; color: #56645c; font-size: 16px; }
+footer { display: flex; justify-content: space-between; gap: 24px; padding-block: 24px; color: #56645c; font-size: 12px; }
 footer p span { margin-inline: 8px; color: #a34524; }
 footer a { text-decoration: none; }
 .skip-link { position: absolute; top: -100px; left: 20px; padding: 10px 16px; background: #fff; z-index: 1; }
 .skip-link:focus { top: 10px; }
-@media (max-width: 850px) {
-  .hero { gap: 12px; padding-block: 56px; }
-  .content-section { grid-template-columns: 160px 1fr; gap: 24px; }
-  .learning-grid { grid-template-columns: 1fr; }
-  .learning-card { padding: 22px; }
-  .card-symbol { margin-bottom: 16px; }
-}
 @media (max-width: 600px) {
   .site-header, main, footer { width: calc(100% - 40px); }
   .site-header { padding-block: 20px; }
   nav { gap: 18px; }
-  nav a { font-size: 12px; }
-  .hero { grid-template-columns: 1fr; gap: 36px; padding-block: 48px; }
-  h1 { font-size: 56px; }
-  .hero-art { max-width: 430px; margin-inline: auto; }
-  .eyebrow { font-size: 10px; letter-spacing: 1px; }
-  .content-section { grid-template-columns: 1fr; gap: 22px; padding-block: 36px; }
-  .connect-section { padding-inline: 0; }
+  .site-section { padding-block: 32px; }
+  .hero { grid-template-columns: 1fr; gap: 24px; }
+  .hero-art { max-width: 400px; margin-inline: auto; }
   footer { flex-wrap: wrap; gap: 12px; }
 }
 @media (prefers-reduced-motion: reduce) {
